@@ -1,27 +1,30 @@
 {
-  "version": "0.1.0",
+  "version": "0.4.0",
   "description": "Protects AI agent memory files from poisoning (fail-closed, AI-scored).",
   "homepage": "https://poisonzero.com",
   "license": "Proprietary",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/jonsmallhill/poisonzero/releases/download/v0.1.0/poisonzero-windows-amd64.exe",
-      "hash": "fd2e940da5b2d44c553f22b3227cd194b985650ba324095ad5aa808a56b22a4a",
+      "url": "https://poisonzero.com/dl/v0.4.0/poisonzero-windows-amd64.exe",
+      "hash": "95af2e64ed4317ec92ac1d8491c5e922ff7c5f487b13c336b397466616f8d6e1",
       "bin": [["poisonzero-windows-amd64.exe", "poisonzero"]]
     },
     "arm64": {
-      "url": "https://github.com/jonsmallhill/poisonzero/releases/download/v0.1.0/poisonzero-windows-arm64.exe",
-      "hash": "53e7b0fcbebf50366e051534550637cc275f43794b169c0e37c3dfe95fb26a36",
+      "url": "https://poisonzero.com/dl/v0.4.0/poisonzero-windows-arm64.exe",
+      "hash": "00c201e8c408f64979bd4f22d6a4c0098347b89158c4f02467e5937b45c20f02",
       "bin": [["poisonzero-windows-arm64.exe", "poisonzero"]]
     }
   },
-  "checkver": "github",
+  "checkver": {
+    "url": "https://poisonzero.com/dl/latest/VERSION",
+    "regex": "([\\d.]+)"
+  },
   "autoupdate": {
     "architecture": {
-      "64bit": { "url": "https://github.com/jonsmallhill/poisonzero/releases/download/v$version/poisonzero-windows-amd64.exe" },
-      "arm64": { "url": "https://github.com/jonsmallhill/poisonzero/releases/download/v$version/poisonzero-windows-arm64.exe" }
+      "64bit": { "url": "https://poisonzero.com/dl/v$version/poisonzero-windows-amd64.exe" },
+      "arm64": { "url": "https://poisonzero.com/dl/v$version/poisonzero-windows-arm64.exe" }
     },
-    "hash": { "url": "https://github.com/jonsmallhill/poisonzero/releases/download/v$version/SHA256SUMS" }
+    "hash": { "url": "https://poisonzero.com/dl/v$version/SHA256SUMS" }
   },
   "notes": "Daemon-Setup (Admin) separat: im Panel App anlegen, dann `poisonzero enroll --app <appId> --code <code>`."
 }
